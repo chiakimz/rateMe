@@ -1,0 +1,11 @@
+<form method="get">
+    {% csrf_token %}
+    {{ form }}
+    <div class="input-group input-group-lg">
+    <input type="text" class="form-control" placeholder="Your name, or a product name you aspire to be..." value="{{ q }}" name="q">
+    <div class="input-group-append">
+        <button type="submit" class="btn btn-outline-secondary">Review Me!</button>
+    </div>
+    <a href="{% url 'review' %}?q={{ q }}" class="btn btn-primary btn-lg">Submit 🚀</a>
+    </div>
+</form>

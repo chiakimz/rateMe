@@ -51,10 +51,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'reviewMeProject.urls'
 
+import os
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(SETTINGS_PATH, 'reviewMe/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,6 +69,10 @@ TEMPLATES = [
         },
     },
 ]
+
+TEMPLATE_DIRS = (
+    os.path.join(os.path.dirname(__file__), '../reviewMe/templates/'),
+)
 
 WSGI_APPLICATION = 'reviewMeProject.wsgi.application'
 
