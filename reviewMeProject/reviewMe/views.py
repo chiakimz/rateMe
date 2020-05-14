@@ -6,6 +6,8 @@ from django.views.generic import CreateView
 class NameView(CreateView):
     def get(self, request):
         q = request.GET.get("q", "")
+        if q != "":
+            return render(request, 'review.html', {'q' : q })
         return render(request, 'username.html', {'q': q})
 
 
