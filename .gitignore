@@ -1,3 +1,5 @@
 /gpt-2
 .DS_Store
 /__pycache__/
+reviewMeProject/All_Amazon_Review.json
+.vscode/settings.json
